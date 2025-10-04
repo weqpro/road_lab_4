@@ -3,6 +3,7 @@ package lotr;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class KingTest {
@@ -13,7 +14,7 @@ public class KingTest {
 
     @Test
     public void testIsClass() {
-        assertTrue(character instanceof Character);
+        assertInstanceOf(Character.class, character);
     }
 
     @Test
