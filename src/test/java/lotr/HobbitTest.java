@@ -1,4 +1,4 @@
-package ua.ucu.apps.lab4;
+package lotr;
 
 import lotr.Hobbit;
 import org.junit.jupiter.api.BeforeEach;
