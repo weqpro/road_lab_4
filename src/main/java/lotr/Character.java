@@ -2,14 +2,17 @@ package lotr;
 
 public abstract class Character {
     private int hp, power;
+    protected KickStrategy kickStrategy;
 
-    protected Character(int hp, int power) {
+    protected Character(int hp, int power, KickStrategy kickStrategy) {
         this.power = power;
         this.hp = hp;
+        this.kickStrategy = kickStrategy;
     }
 
-    public abstract void kick(Character enemy);
-    public abstract boolean isAlive();
+    public boolean isAlive() {
+        return this.hp > 0;
+    }
     public int getHp() {
         return hp;
     }
@@ -24,6 +27,10 @@ public abstract class Character {
 
     public void setPower(int power) {
         this.power = Math.max(power, 0);
+    }
+
+    public void kick(Character enemy) {
+        this.kickStrategy.kick(this, enemy);
     }
 
     @Override

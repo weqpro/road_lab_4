@@ -3,18 +3,8 @@ package lotr;
 public class Hobbit extends Character{
 
     public Hobbit() {
-        super(3, 0);
+        super(3, 0, new HobbitKick());
     }
 
-    private void ToCry(){}
-
-    @Override
-    public void kick(Character enemy) {
-        ToCry();
-    }
-
-    @Override
-    public boolean isAlive() {
-        return false;
-    }
+    public void ToCry(){}
 }
